@@ -17,10 +17,32 @@ header {
     box-shadow: 0 1px 5px blue;
 }
 
-.cell {
+.cell-7 {
     border: 1px solid blue;
-    width: 10%;
-    height: 10%;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-9 {
+    border: 1px solid blue;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-10 {
+    border: 1px solid blue;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
     cursor: pointer;
     font-size: 2rem;
     display: flex;

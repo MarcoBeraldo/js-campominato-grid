@@ -34,7 +34,7 @@
 // *FUNZIONI
 const createCell = () => {
     const newCell = document.createElement('div');
-    newCell.className = 'cell'
+    newCell.className = `cell-${cells}`
     return newCell;
 };
 
@@ -45,12 +45,11 @@ const selectDifficulty = () => {
 }
 
 // *prendo gli elementi utili
-const grid = document.getElementById('grid');
+let grid = document.getElementById('grid');
 const playButton = document.getElementById('play-button');
 const retryButton = document.getElementById('retry-button');
-let rows = 10
-let cells = 10
-const totalCells = rows * cells
+const mainSection = document.getElementById('main')
+let rows = cells = 10
 
 
 // quando premo il bottone 'Gioca!' creo la griglia, 
@@ -61,12 +60,17 @@ playButton.addEventListener('click', function () {
     let rows = cells = 10
     let difficulty = selectDifficulty();
 
+
     if (difficulty === 'easy') {
         rows = 7;
+        cells = 7;
     } else if (difficulty === 'normal') {
         rows = 9;
+        cells = 9;
     }
 
+
+    let totalCells = rows * cells
     for (let i = 1; i <= totalCells; i++) {
         // creo una nuova cella
         const newCell = createCell();
@@ -85,18 +89,7 @@ playButton.addEventListener('click', function () {
     playButton.classList.add('d-none');
     // rimuovo 'display: none' al bottone 'Ricomincia'
     retryButton.classList.remove('d-none');
-})
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// quando premo Ricomincia! crea una nuova griglia con la difficoltà selezionata
+retryButton.addEventListener('click', function () { }
