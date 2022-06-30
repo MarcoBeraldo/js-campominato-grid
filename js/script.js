@@ -38,22 +38,18 @@ const createCell = () => {
     return newCell;
 };
 
-
-
-
-
-
-
-
-
-
+const selectDifficulty = () => {
+    let difficulty = document.getElementById("difficulty-select").value;
+    console.log(difficulty)
+    return difficulty;
+}
 
 // *prendo gli elementi utili
 const grid = document.getElementById('grid');
 const playButton = document.getElementById('play-button');
 const retryButton = document.getElementById('retry-button');
-let rows = 10;
-let cells = 10;
+let rows = 10
+let cells = 10
 const totalCells = rows * cells
 
 
@@ -62,6 +58,14 @@ const totalCells = rows * cells
 // mostro il bottone 'Ricomincia!'
 // assegno un numero alle celle
 playButton.addEventListener('click', function () {
+    let rows = cells = 10
+    let difficulty = selectDifficulty();
+
+    if (difficulty === 'easy') {
+        rows = 7;
+    } else if (difficulty === 'normal') {
+        rows = 9;
+    }
 
     for (let i = 1; i <= totalCells; i++) {
         // creo una nuova cella
@@ -70,7 +74,7 @@ playButton.addEventListener('click', function () {
         grid.appendChild(newCell);
         // per ogni casella creata inserisco il suo numero in ordine
         newCell.innerText = i;
-
+        // al click su ogni cella, la cella diventa azzurra e stampo in console il suo numero
         newCell.addEventListener('click', (event) => {
             console.log(i);
             event.target.classList.toggle('clicked');
