@@ -91,5 +91,5 @@ playButton.addEventListener('click', function () {
     retryButton.classList.remove('d-none');
 });
 
-// quando premo Ricomincia! crea una nuova griglia con la difficoltà selezionata
-retryButton.addEventListener('click', function () { }
+// // quando premo Ricomincia! crea una nuova griglia con la difficoltà selezionata
+// retryButton.addEventListener('click', function () { }
