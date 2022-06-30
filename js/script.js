@@ -57,18 +57,24 @@ let rows = 10;
 let cells = 10;
 const totalCells = rows * cells
 
-// quando premo il bottone 'Gioca!' creo la griglia, tolgo il bottone 'Gioca!' e mostro il bottone 'Ricomincia!'
+// quando premo il bottone 'Gioca!' creo la griglia, 
+// tolgo il bottone 'Gioca!'  
+// mostro il bottone 'Ricomincia!'
+// assegno un numero alle celle
 playButton.addEventListener('click', function () {
 
     for (let i = 1; i <= totalCells; i++) {
         // creo una nuova cella
         const newCell = createCell();
-
+        // la appendo alla griglia
         grid.appendChild(newCell);
+        // per ogni casella creata inserisco il suo numero in ordine
+        newCell.innerText = i;
     };
 
-
+    // assegno 'display: none' al bottone 'Gioca!'
     playButton.classList.add('d-none');
+    // rimuovo 'display: none' al bottone 'Ricomincia'
     retryButton.classList.remove('d-none');
 })
 
