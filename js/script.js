@@ -35,7 +35,6 @@
 const createCell = () => {
     const newCell = document.createElement('div');
     newCell.className = 'cell'
-    console.log(newCell);
     return newCell;
 };
 
@@ -57,6 +56,7 @@ let rows = 10;
 let cells = 10;
 const totalCells = rows * cells
 
+
 // quando premo il bottone 'Gioca!' creo la griglia, 
 // tolgo il bottone 'Gioca!'  
 // mostro il bottone 'Ricomincia!'
@@ -70,6 +70,11 @@ playButton.addEventListener('click', function () {
         grid.appendChild(newCell);
         // per ogni casella creata inserisco il suo numero in ordine
         newCell.innerText = i;
+
+        newCell.addEventListener('click', (event) => {
+            console.log(i);
+            event.target.classList.toggle('clicked');
+        });
     };
 
     // assegno 'display: none' al bottone 'Gioca!'
@@ -77,6 +82,9 @@ playButton.addEventListener('click', function () {
     // rimuovo 'display: none' al bottone 'Ricomincia'
     retryButton.classList.remove('d-none');
 })
+
+
+
 
 
 

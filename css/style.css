@@ -21,8 +21,11 @@ header {
     border: 1px solid blue;
     width: 10%;
     height: 10%;
-
-
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #grid {
@@ -31,4 +34,8 @@ header {
     height: 1000px;
     margin: 0 auto;
 
+}
+
+.clicked {
+    background-color: lightblue;
 }
