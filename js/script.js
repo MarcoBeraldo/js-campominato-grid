@@ -57,6 +57,9 @@ let rows = cells = 10
 // mostro il bottone 'Ricomincia!'
 // assegno un numero alle celle
 playButton.addEventListener('click', function () {
+    this.innerText = 'Ricomincia!';
+    grid.innerHTML = '';
+
     let rows = cells = 10
     let difficulty = selectDifficulty();
 
@@ -85,11 +88,5 @@ playButton.addEventListener('click', function () {
         });
     };
 
-    // assegno 'display: none' al bottone 'Gioca!'
-    playButton.classList.add('d-none');
-    // rimuovo 'display: none' al bottone 'Ricomincia'
-    retryButton.classList.remove('d-none');
-});
 
-// // quando premo Ricomincia! crea una nuova griglia con la difficoltà selezionata
-// retryButton.addEventListener('click', function () { }
+});
