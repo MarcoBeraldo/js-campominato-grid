@@ -60,13 +60,13 @@ playButton.addEventListener('click', function () {
     this.innerText = 'Ricomincia!';
     grid.innerHTML = '';
 
-    let rows = cells = 10
+    let rows = cells = 7
     let difficulty = selectDifficulty();
 
 
     if (difficulty === 'easy') {
-        rows = 7;
-        cells = 7;
+        rows = 10;
+        cells = 10;
     } else if (difficulty === 'normal') {
         rows = 9;
         cells = 9;
